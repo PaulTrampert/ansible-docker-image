@@ -9,6 +9,6 @@ COPY ./playbook.yml ./playbook/playbook.yml
 
 RUN chmod +x ./entrypoint.sh
 
-ENTRYPOINT [ "/root/entrypoint.sh" ]
+ENTRYPOINT [ "/entrypoint.sh" ]
 
 CMD [ "ansible-playbook", "./playbook/playbook.yml" ]
