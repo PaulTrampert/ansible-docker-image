@@ -2,7 +2,7 @@ FROM python:3.7-stretch
 RUN pip3 install --user ansible
 ENV PATH=$PATH:/root/.local/bin
 
-WORKDIR /root
+WORKDIR /
 
 COPY ./entrypoint.sh ./entrypoint.sh
 COPY ./playbook.yml ./playbook/playbook.yml
