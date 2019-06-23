@@ -5,6 +5,10 @@ RUN apt-get update \
   && apt-get clean
 COPY passwd.template /passwd.template
 
+ENV LD_PRELOAD=libnss_wrapper.so \
+  NSS_WRAPPER_PASSWD=/tmp/passwd \
+  NSS_WRAPPER_GROUP=/etc/group
+
 RUN pip3 install ansible
 
 WORKDIR /
